@@ -1,142 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const WORKOUT = {
-  sets: [
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 30000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 120000
-    },
-    {
-      reps: [
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 },
-        { hang: 7000, rest: 3000 }
-      ],
-      rest: 0
-    }
-  ]
-};
+const WORKOUT = [
+  { message: 'hang', time: 7000 },
+];
 
 class WorkoutSelector extends React.Component {
   onStartClicked() {
@@ -159,25 +26,25 @@ class WorkoutTimer extends React.Component {
     super(props);
 
     this.state = {
-      rep: 0,
-      set: 0,
-      time: 0
+      time: 7000,
+      interval: setInterval(this.onInterval.bind(this), INTERVAL)
     };
 
-    setInterval(this.onInterval.bind(this), INTERVAL);
   }
 
   onInterval() {
-    let time = this.state.time;
+    let time = this.state.time - INTERVAL;
 
-    this.setState({
-      time: time + INTERVAL
-    });
+    if(time <= 0) {
+      clearInterval(this.state.interval);
+      this.props.onFinished();
+    } else {
+      this.setState({ time: time });
+    }
   }
 
   render() {
     return <div>
-      <p>{ "Set: " + this.state.set + " Rep: " + this.state.rep }</p>
       <p>{ "Hang!" }</p>
       <p>{ this.state.time / 1000 }</p>
     </div>;
