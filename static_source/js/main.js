@@ -1,18 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Hello extends React.Component {
-  render() {
-    console.log('Hey htere');
-    return <p>{ "Hello, world" }</p>;
-  }
-}
+import Timer from './timer';
 
-var hello = document.getElementById('hello');
+var timer = document.getElementById('timer');
 
 ReactDOM.render(
-  <Hello />,
-  hello
+  <Timer />,
+  timer
 );
-
-console.log('Hey');
