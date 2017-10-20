@@ -1,17 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const INTERVAL = 10;
+
 export default class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isRunning: false
+      interval: null,
+      isRunning: false,
+      time: null
     };
   }
 
+  onInterval() {
+    let time = this.state.time - INTERVAL;
+
+    if(time <= 0) {
+      clearInterval(this.state.interval);
+      this.setState({
+        interval: null,
+        isRunning: false,
+        time: null
+      });
+    } else {
+      this.setState({ time: time });
+    }
+  }
+
   onStartClicked() {
-    console.log('hi');
-    this.setState({ running: true });
+    this.setState({
+      isRunning: true,
+      interval: setInterval(this.onInterval.bind(this), INTERVAL),
+      time: 7000
+    });
   }
 
   render() {
@@ -19,6 +41,9 @@ export default class Timer extends React.Component {
       return <button onClick={ this.onStartClicked.bind(this) }>{ "Start" }</button>;
     }
 
-    return <p>{ "Hello, world" }</p>;
+    return <div>
+      <p>{ "Hang!" }</p>
+      <p>{ this.state.time }</p>
+    </div>;
   }
 }
