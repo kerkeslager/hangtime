@@ -11,20 +11,20 @@ export default class WorkoutTimer extends React.Component {
       interval: setInterval(this.onInterval.bind(this), INTERVAL),
       setIndex: 0,
       instructionIndex: 0,
-      time: props.workout[0].instructions[0].time
+      time: props.workout.sets[0].instructions[0].time
     };
   }
 
   onSetFinished() {
     let setIndex = this.state.setIndex + 1;
 
-    if(setIndex === this.props.workout.length) {
+    if(setIndex === this.props.workout.sets.length) {
       this.props.onFinished();
     } else {
       this.setState({
         setIndex: setIndex,
         instructionIndex: 0,
-        time: this.props.workout[setIndex].instructions[0].time
+        time: this.props.workout.sets[setIndex].instructions[0].time
       });
     }
   }
@@ -32,12 +32,12 @@ export default class WorkoutTimer extends React.Component {
   onRepFinished() {
     let instructionIndex = this.state.instructionIndex + 1;
 
-    if(instructionIndex === this.props.workout[this.state.setIndex].instructions.length) {
+    if(instructionIndex === this.props.workout.sets[this.state.setIndex].instructions.length) {
       this.onSetFinished();
     } else {
       this.setState({
         instructionIndex: instructionIndex,
-        time: this.props.workout[this.state.setIndex].instructions[instructionIndex].time
+        time: this.props.workout.sets[this.state.setIndex].instructions[instructionIndex].time
       });
     }
   }
@@ -46,7 +46,7 @@ export default class WorkoutTimer extends React.Component {
     let time = this.state.time - INTERVAL;
 
     if(time === 0) {
-      if(this.state.instructionIndex < this.props.workout[this.state.setIndex].instructions.length) {
+      if(this.state.instructionIndex < this.props.workout.sets[this.state.setIndex].instructions.length) {
         this.onRepFinished();
       } else {
         clearInterval(this.state.interval);
@@ -58,8 +58,8 @@ export default class WorkoutTimer extends React.Component {
   }
 
   render() {
-    return <div>
-      <p>{ this.props.workout[this.state.setIndex].instructions[this.state.instructionIndex].type }</p>
+    return <div id='workout-timer'>
+      <p>{ this.props.workout.sets[this.state.setIndex].instructions[this.state.instructionIndex].type }</p>
       <p>{ this.state.time / 1000 }</p>
     </div>;
   }

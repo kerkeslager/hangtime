@@ -5,7 +5,6 @@ import WorkoutSelector from './workout-selector';
 import WorkoutTimer from './workout-timer';
 import FinishedWorkout from './finished-workout';
 
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);

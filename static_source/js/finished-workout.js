@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 
 export default class FinishedWorkout extends React.Component {
   render() {
-    return <p>{ "Finished!" }</p>;
+    return <div id='finished-workout'>{ "Finished!" }</div>;
   }
 }
