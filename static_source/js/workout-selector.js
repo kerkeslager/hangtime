@@ -1,213 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const WORKOUTS = [
-  {
-    name: 'repeaters',
-    sets: [
-      {
-        instructions: [
-          { type: 'prep', time: 5000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 300000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ]
-      }
-    ]
-  }
-];
+import WORKOUTS from './workouts';
 
 export default class WorkoutSelector extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedWorkout: null
+    };
+  }
+
+  onSelectChanged(e) {
+    this.setState({
+      selectedWorkout: WORKOUTS[e.target.value]
+    });
+  }
+
   onStartClicked() {
-    this.props.onSelected(WORKOUTS[0]);
+    this.props.onSelected(this.state.selectedWorkout);
+  }
+
+  renderOptions() {
+    return WORKOUTS.map((workout, workoutIndex) => {
+      return <option key={ 'workout-' + workoutIndex } value={ workoutIndex }>
+        { workout.name }
+      </option>;
+    });
   }
 
   render() {
-    return <button onClick={ this.onStartClicked.bind(this) }>{ "Start" }</button>;
+    return <div id='workout-selector'>
+      <select onChange={ this.onSelectChanged.bind(this) }>
+        { this.renderOptions() }
+      </select>
+      <button onClick={ this.onStartClicked.bind(this) }>{ "Start" }</button>
+    </div>;
   }
 }
 
