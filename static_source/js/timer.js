@@ -2,174 +2,198 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const WORKOUT = [
-  [
-    { type: 'prep', time: 5000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 300000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ],
-  [
-    { type: 'prep', time: 120000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 },
-    { type: 'rest', time: 3000 },
-    { type: 'hang', time: 7000 }
-  ]
+  {
+    instructions: [
+      { type: 'prep', time: 5000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 300000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ],
+  },
+  {
+    instructions: [
+      { type: 'prep', time: 120000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 },
+      { type: 'rest', time: 3000 },
+      { type: 'hang', time: 7000 }
+    ]
+  }
 ];
 
 class WorkoutSelector extends React.Component {
@@ -192,13 +216,11 @@ class WorkoutTimer extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
-
     this.state = {
       interval: setInterval(this.onInterval.bind(this), INTERVAL),
       setIndex: 0,
       instructionIndex: 0,
-      time: props.workout[0][0].time
+      time: props.workout[0].instructions[0].time
     };
   }
 
@@ -211,7 +233,7 @@ class WorkoutTimer extends React.Component {
       this.setState({
         setIndex: setIndex,
         instructionIndex: 0,
-        time: this.props.workout[setIndex][0].time
+        time: this.props.workout[setIndex].instructions[0].time
       });
     }
   }
@@ -219,12 +241,12 @@ class WorkoutTimer extends React.Component {
   onRepFinished() {
     let instructionIndex = this.state.instructionIndex + 1;
 
-    if(instructionIndex === this.props.workout[this.state.setIndex].length) {
+    if(instructionIndex === this.props.workout[this.state.setIndex].instructions.length) {
       this.onSetFinished();
     } else {
       this.setState({
         instructionIndex: instructionIndex,
-        time: this.props.workout[this.state.setIndex][instructionIndex].time
+        time: this.props.workout[this.state.setIndex].instructions[instructionIndex].time
       });
     }
   }
@@ -233,7 +255,7 @@ class WorkoutTimer extends React.Component {
     let time = this.state.time - INTERVAL;
 
     if(time === 0) {
-      if(this.state.instructionIndex < this.props.workout[this.state.setIndex].length) {
+      if(this.state.instructionIndex < this.props.workout[this.state.setIndex].instructions.length) {
         this.onRepFinished();
       } else {
         clearInterval(this.state.interval);
@@ -246,7 +268,7 @@ class WorkoutTimer extends React.Component {
 
   render() {
     return <div>
-      <p>{ this.props.workout[this.state.setIndex][this.state.instructionIndex].type }</p>
+      <p>{ this.props.workout[this.state.setIndex].instructions[this.state.instructionIndex].type }</p>
       <p>{ this.state.time / 1000 }</p>
     </div>;
   }
