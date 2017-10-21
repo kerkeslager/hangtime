@@ -4,5 +4,13 @@ body {
 }
 
 #app {
+  display: flex;
+  flex-grow: 1;
+}
+
+#app > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   flex-grow: 1;
 }
