@@ -2,7 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const WORKOUT = [
-  { message: 'hang', time: 7000 },
+  { type: 'prep', time: 5000 },
+  { type: 'hang', time: 7000 },
+  { type: 'rest', time: 3000 },
+  { type: 'hang', time: 7000 },
+  { type: 'rest', time: 3000 },
+  { type: 'hang', time: 7000 },
+  { type: 'rest', time: 3000 },
+  { type: 'hang', time: 7000 },
+  { type: 'rest', time: 3000 },
+  { type: 'hang', time: 7000 },
+  { type: 'rest', time: 3000 },
+  { type: 'hang', time: 7000 }
 ];
 
 class WorkoutSelector extends React.Component {
@@ -19,25 +30,48 @@ WorkoutSelector.defaultProps = {
   onSelected: () => { }
 };
 
-const INTERVAL = 10;
+const INTERVAL = 100;
 
 class WorkoutTimer extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      interval: setInterval(this.onInterval.bind(this), INTERVAL),
+      setIndex: 0,
+      instructionIndex: 0,
       time: 7000,
-      interval: setInterval(this.onInterval.bind(this), INTERVAL)
     };
 
+  }
+
+  onSetFinished() {
+    this.props.onFinished();
+  }
+
+  onRepFinished() {
+    let instructionIndex = this.state.instructionIndex + 1;
+
+    if(instructionIndex === this.props.workout.length) {
+      this.onSetFinished();
+    } else {
+      this.setState({
+        instructionIndex: instructionIndex,
+        time: this.props.workout[instructionIndex].time
+      });
+    }
   }
 
   onInterval() {
     let time = this.state.time - INTERVAL;
 
-    if(time <= 0) {
-      clearInterval(this.state.interval);
-      this.props.onFinished();
+    if(time === 0) {
+      if(this.state.instructionIndex < this.props.workout.length) {
+        this.onRepFinished();
+      } else {
+        clearInterval(this.state.interval);
+        this.props.onFinished();
+      }
     } else {
       this.setState({ time: time });
     }
@@ -45,7 +79,7 @@ class WorkoutTimer extends React.Component {
 
   render() {
     return <div>
-      <p>{ "Hang!" }</p>
+      <p>{ this.props.workout[this.state.instructionIndex].type }</p>
       <p>{ this.state.time / 1000 }</p>
     </div>;
   }
