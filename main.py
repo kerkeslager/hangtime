@@ -8,3 +8,7 @@ def index():
 @app.route('/js/<path:path>')
 def send_js(path):
     return flask.send_from_directory('static/js', path)
+
+@app.route('/css/<path:path>')
+def send_css(path):
+    return flask.send_from_directory('css', path)

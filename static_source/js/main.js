@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './timer';
+import App from './app';
 
-var timer = document.getElementById('timer');
-
-ReactDOM.render(
-  <App />,
-  timer
-);
+var app = document.getElementById('app');
+ReactDOM.render(<App />, app);
