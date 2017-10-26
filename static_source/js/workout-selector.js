@@ -32,7 +32,7 @@ export default class WorkoutSelector extends React.Component {
 
   renderOptions() {
     return [
-      <option key={ 'workout-default' }></option>
+      <option key={ 'workout-default' }>--select a workout--</option>
     ].concat(WORKOUTS.map((workout, workoutIndex) => {
       return <option key={ 'workout-' + workoutIndex } value={ workoutIndex }>
         { workout.name }
@@ -41,11 +41,20 @@ export default class WorkoutSelector extends React.Component {
   }
 
   render() {
+    if(this.state.error) {
+      return <div id='workout-selector'>
+        <select onChange={ this.onSelectChanged.bind(this) }>
+          { this.renderOptions() }
+        </select>
+        <p>{ this.state.error }</p>
+        <button onClick={ this.onStartClicked.bind(this) }>{ "Start" }</button>
+      </div>;
+    }
+
     return <div id='workout-selector'>
       <select onChange={ this.onSelectChanged.bind(this) }>
         { this.renderOptions() }
       </select>
-      <p>{ this.state.error }</p>
       <button onClick={ this.onStartClicked.bind(this) }>{ "Start" }</button>
     </div>;
   }
