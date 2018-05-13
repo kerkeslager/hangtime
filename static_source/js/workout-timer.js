@@ -96,10 +96,13 @@ export default class WorkoutTimer extends React.Component {
   }
 
   renderRemainingHangsCount() {
-    let remainingHangsCount = this.props.workout.sets[this.state.setIndex].instructions.slice(
-      this.instructionIndex,
-      this.props.workout.sets[this.state.setIndex].length
-    ).filter(i => i.type === 'hang').length;
+    let instructions = this.props.workout.sets[this.state.setIndex].instructions;
+    let remainingInstructions = instructions.slice(
+      this.state.instructionIndex,
+      instructions.length
+    );
+    let remainingHangs = remainingInstructions.filter(i => i.type === 'hang');
+    let remainingHangsCount = remainingHangs.length;
 
     return <div className='remaining'>{ remainingHangsCount + ' hangs remaining' }</div>;
   }
