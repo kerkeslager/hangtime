@@ -92,7 +92,7 @@ export default class WorkoutTimer extends React.Component {
 
   renderRemainingSetsCount() {
     let remainingSetsCount = this.props.workout.sets.length - this.state.setIndex;
-    return <p>{ remainingSetsCount + ' sets remaining' }</p>;
+    return <div className='remaining'>{ remainingSetsCount + ' sets remaining' }</div>;
   }
 
   renderRemainingHangsCount() {
@@ -101,7 +101,7 @@ export default class WorkoutTimer extends React.Component {
       this.props.workout.sets[this.state.setIndex].length
     ).filter(i => i.type === 'hang').length;
 
-    return <p>{ remainingHangsCount + ' hangs remaining' }</p>;
+    return <div className='remaining'>{ remainingHangsCount + ' hangs remaining' }</div>;
   }
 
   renderInstructionArea() {
@@ -112,25 +112,25 @@ export default class WorkoutTimer extends React.Component {
         if(this.state.time <= 5000) {
           return <div>
             { this.renderRemainingSetsCount() }
-            <p>{ 'Get ready!' }</p>
+            <div className='instruction'>{ 'Get ready!' }</div>
           </div>;
         } else {
           return <div>
             { this.renderRemainingSetsCount() }
-            <p>{ 'Rest' }</p>
+            <div className='instruction'>{ 'Rest' }</div>
           </div>;
         }
 
       case 'rest':
         return <div>
           { this.renderRemainingHangsCount() }
-          <p>{ 'Rest' }</p>
+          <div className='instruction'>{ 'Rest' }</div>
         </div>;
 
       case 'hang':
         return <div>
           { this.renderRemainingHangsCount() }
-          <p>{ 'Hang!' }</p>
+          <div className='instruction'>{ 'Hang!' }</div>
         </div>;
 
       default:
@@ -140,8 +140,10 @@ export default class WorkoutTimer extends React.Component {
 
   render() {
     return <div id='workout-timer'>
+      <div className='hold'>{ "Hold: "}{ this.props.workout.sets[this.state.setIndex].hold }</div>
+      <div className='hold'>{ "Fingers: "}{ this.props.workout.sets[this.state.setIndex].fingers }</div>
       { this.renderInstructionArea() }
-      <p>{ this.state.time / 1000 }</p>
+      <div className='time'>{ this.state.time / 1000 }</div>
     </div>;
   }
 }

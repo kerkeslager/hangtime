@@ -17,3 +17,23 @@ body {
   flex-direction: column;
   flex-grow: 1;
 }
+
+div {
+  margin: 2vh 0;
+}
+
+.hold {
+  font-size: 48pt;
+}
+
+.remaining {
+  font-size: 36pt;
+}
+
+.instruction {
+  font-size: 64pt;
+}
+
+.time {
+  font-size: 72pt;
+}

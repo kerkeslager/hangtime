@@ -3,36 +3,64 @@ export default [
     name: 'strength hangs',
     sets: [
       {
+        hold: '1',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 5000 },
           { type: 'hang', time: 12000 }
         ]
       },
       {
+        hold: '4',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 48000 },
           { type: 'hang', time: 12000 }
         ]
       },
       {
+        hold: 'A',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 48000 },
           { type: 'hang', time: 12000 }
         ]
       },
       {
+        hold: '1',
+        fingers: '3',
+        instructions: [
+          { type: 'prep', time: 48000 },
+          { type: 'hang', time: 12000 }
+        ]
+      },
+      {
+        hold: '1',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 288000 },
           { type: 'hang', time: 12000 }
         ]
       },
       {
+        hold: '4',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 48000 },
           { type: 'hang', time: 12000 }
         ]
       },
       {
+        hold: 'A',
+        fingers: '4',
+        instructions: [
+          { type: 'prep', time: 48000 },
+          { type: 'hang', time: 12000 }
+        ]
+      },
+      {
+        hold: '1',
+        fingers: '3',
         instructions: [
           { type: 'prep', time: 48000 },
           { type: 'hang', time: 12000 }
@@ -44,6 +72,8 @@ export default [
     name: 'repeaters',
     sets: [
       {
+        hold: '1',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 5000 },
           { type: 'hang', time: 7000 },
@@ -60,6 +90,8 @@ export default [
         ],
       },
       {
+        hold: '2',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -76,6 +108,8 @@ export default [
         ],
       },
       {
+        hold: '3',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -92,6 +126,8 @@ export default [
         ],
       },
       {
+        hold: 'A',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -108,6 +144,8 @@ export default [
         ],
       },
       {
+        hold: '2',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -124,6 +162,8 @@ export default [
         ],
       },
       {
+        hold: '1',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -140,6 +180,8 @@ export default [
         ],
       },
       {
+        hold: '1',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 300000 },
           { type: 'hang', time: 7000 },
@@ -156,6 +198,8 @@ export default [
         ],
       },
       {
+        hold: '2',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -172,6 +216,8 @@ export default [
         ],
       },
       {
+        hold: '3',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -188,6 +234,8 @@ export default [
         ],
       },
       {
+        hold: 'A',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -204,6 +252,8 @@ export default [
         ],
       },
       {
+        hold: '2',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
@@ -220,6 +270,8 @@ export default [
         ],
       },
       {
+        hold: '1',
+        fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
           { type: 'hang', time: 7000 },
