@@ -28,14 +28,6 @@ export default [
       },
       {
         hold: '1',
-        fingers: '3',
-        instructions: [
-          { type: 'prep', time: 48000 },
-          { type: 'hang', time: 12000 }
-        ]
-      },
-      {
-        hold: '1',
         fingers: '4',
         instructions: [
           { type: 'prep', time: 288000 },
@@ -53,14 +45,6 @@ export default [
       {
         hold: 'A',
         fingers: '4',
-        instructions: [
-          { type: 'prep', time: 48000 },
-          { type: 'hang', time: 12000 }
-        ]
-      },
-      {
-        hold: '1',
-        fingers: '3',
         instructions: [
           { type: 'prep', time: 48000 },
           { type: 'hang', time: 12000 }
@@ -90,6 +74,24 @@ export default [
         ],
       },
       {
+        hold: '1',
+        fingers: '4',
+        instructions: [
+          { type: 'prep', time: 120000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 }
+        ],
+      },
+      {
         hold: '2',
         fingers: '4',
         instructions: [
@@ -108,7 +110,7 @@ export default [
         ],
       },
       {
-        hold: '3',
+        hold: '1',
         fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
@@ -127,24 +129,6 @@ export default [
       },
       {
         hold: 'A',
-        fingers: '4',
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        hold: '2',
         fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
@@ -198,6 +182,24 @@ export default [
         ],
       },
       {
+        hold: '1',
+        fingers: '4',
+        instructions: [
+          { type: 'prep', time: 120000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 },
+          { type: 'rest', time: 3000 },
+          { type: 'hang', time: 7000 }
+        ],
+      },
+      {
         hold: '2',
         fingers: '4',
         instructions: [
@@ -216,7 +218,7 @@ export default [
         ],
       },
       {
-        hold: '3',
+        hold: '1',
         fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
@@ -235,24 +237,6 @@ export default [
       },
       {
         hold: 'A',
-        fingers: '4',
-        instructions: [
-          { type: 'prep', time: 120000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 },
-          { type: 'rest', time: 3000 },
-          { type: 'hang', time: 7000 }
-        ],
-      },
-      {
-        hold: '2',
         fingers: '4',
         instructions: [
           { type: 'prep', time: 120000 },
