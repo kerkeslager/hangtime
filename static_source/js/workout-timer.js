@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import TimeDisplay from './time-display';
+
 const INTERVAL = 100;
 
 function setBodyBackground(color) {
@@ -33,7 +35,7 @@ export default class WorkoutTimer extends React.Component {
       interval: setInterval(this.onInterval.bind(this), INTERVAL),
       setIndex: 0,
       instructionIndex: 0,
-      time: props.workout.sets[0].instructions[0].time
+      time: props.workout.sets[0].instructions[0].time // This is a fudge factor to avoid a weird display bug
     };
 
     setBodyBackground(instructionTypeToColor(props.workout.sets[0].instructions[0].type));
@@ -49,7 +51,7 @@ export default class WorkoutTimer extends React.Component {
       this.setState({
         setIndex: setIndex,
         instructionIndex: 0,
-        time: this.props.workout.sets[setIndex].instructions[0].time
+        time: this.props.workout.sets[setIndex].instructions[0].time - 1 // This is a fudge factor to avoid a weird display bug
       });
 
       setBodyBackground(instructionTypeToColor(
@@ -66,7 +68,7 @@ export default class WorkoutTimer extends React.Component {
     } else {
       this.setState({
         instructionIndex: instructionIndex,
-        time: this.props.workout.sets[this.state.setIndex].instructions[instructionIndex].time
+        time: this.props.workout.sets[this.state.setIndex].instructions[instructionIndex].time - 1 // This is a fudge factor to avoid a weird display bug
       });
 
       setBodyBackground(instructionTypeToColor(
@@ -78,7 +80,7 @@ export default class WorkoutTimer extends React.Component {
   onInterval() {
     let time = this.state.time - INTERVAL;
 
-    if(time === 0) {
+    if(time <= 0) {
       if(this.state.instructionIndex < this.props.workout.sets[this.state.setIndex].instructions.length) {
         this.onRepFinished();
       } else {
@@ -146,7 +148,7 @@ export default class WorkoutTimer extends React.Component {
       <div className='hold'>{ "Hold: "}{ this.props.workout.sets[this.state.setIndex].hold }</div>
       <div className='hold'>{ "Fingers: "}{ this.props.workout.sets[this.state.setIndex].fingers }</div>
       { this.renderInstructionArea() }
-      <div className='time'>{ this.state.time / 1000 }</div>
+      <div className='time'><TimeDisplay milliseconds={ this.state.time }/></div>
     </div>;
   }
 }
